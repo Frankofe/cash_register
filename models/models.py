@@ -26,8 +26,8 @@ logger = logging.getLogger(__name__)
 
 
 
-class movimientos(models.Model):
-    _name = 'caja_registradora.movimientos'
+class movements(models.Model):
+    _name = 'cash_register.movements'
     _descripcion='Register in a history the movements in the cash register'
     _order='date desc'
     type= fields.Selection(string='Movement type', selection=[('i','Entry'),('e','Egress')],required=True)
@@ -65,7 +65,7 @@ class movimientos(models.Model):
     @api.model
     def create(self, values):
         values['date'] = datetime.now()
-        res = super(movimientos, self).create(values)
+        res = super(movements, self).create(values)
         logger.info(res)
         logger.info(values)
         return res

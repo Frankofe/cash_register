@@ -1,0 +1,76 @@
+<odoo>
+  <data>
+
+    <!-- List View -->
+    <record model="ir.ui.view" id="cash_register.movements_list_view">
+      <field name="name">cash_register.movements.view.tree</field>
+      <field name="model">cash_register.movements</field>
+      <field name="arch" type="xml">
+        <tree delete="0" edit="0" duplicate="0">
+          <field name="type"/>
+          <field name="amount"/>
+          <field name="balance"/>
+          <field name="contact"/>
+          <field name="create_date"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Form View -->
+    <record model="ir.ui.view" id="cash_register.movements_form_view">
+      <field name="name">cash_register.movements.view.form</field>
+      <field name="model">cash_register.movements</field>
+      <field name="arch" type="xml">
+        <form string="Movement Form" delete="0" edit="0" duplicate="0" create="0">
+          <sheet>
+
+            <separator string="Movement Information" />
+
+            <group>
+              <group>
+                <field name="type" placeholder="Please select a type"/>
+                <field name="amount" />
+              </group>
+
+              <group>
+                <field name="contact" />
+                <field name="create_date" />
+              </group>
+            </group>
+
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Search View -->
+    <record model="ir.ui.view" id="cash_register.movements_search_view">
+      <field name="name">cash_register.movements.view.search</field>
+      <field name="model">cash_register.movements</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="contact" />
+          <field name="create_date" />
+          <group>
+            <filter name="group_by_type" string="Type of movement" context="{'group_by':'type'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+
+    <!-- Menu Definitions-->
+    <record model="ir.actions.act_window" id="cash_register.movements_action_window">
+      <field name="name">Movements</field>
+      <field name="res_model">cash_register.movements</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Cash Register" id="cash_register.menu_root" web_icon="cash_register,static/description/icon.png"/>
+
+    <!-- menu categories -->
+    <menuitem name="Movements" id="cash_register.movements_menu" parent="cash_register.menu_root" action="cash_register.movements_action_window"/>
+
+  </data>
+</odoo>

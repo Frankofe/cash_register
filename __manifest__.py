@@ -25,6 +25,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/movements.xml',
+        'views/res_partner.xml',
     ],
     
     #Aplications

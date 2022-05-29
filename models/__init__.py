@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import movements
+from . import movements, res_partner

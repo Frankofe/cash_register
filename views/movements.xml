@@ -6,7 +6,7 @@
       <field name="name">cash_register.movements.view.tree</field>
       <field name="model">cash_register.movements</field>
       <field name="arch" type="xml">
-        <tree delete="0" edit="0" duplicate="0">
+        <tree duplicate="0">
           <field name="type"/>
           <field name="amount"/>
           <field name="balance"/>
@@ -21,7 +21,7 @@
       <field name="name">cash_register.movements.view.form</field>
       <field name="model">cash_register.movements</field>
       <field name="arch" type="xml">
-        <form string="Movement Form" delete="0" edit="0" duplicate="0" create="0">
+        <form string="Movement Form">
           <sheet>
 
             <separator string="Movement Information" />
@@ -52,7 +52,10 @@
           <field name="contact" />
           <field name="create_date" />
           <group>
+            <filter name="entry_filter" string="Entries" domain="[('type' , '=' , 'i')]"/>
+            <filter name="entry_filter" string="Egress" domain="[('type' , '=' , 'e')]"/>
             <filter name="group_by_type" string="Type of movement" context="{'group_by':'type'}"/>
+            <filter name="group_by_contact" string="Contacts" context="{'group_by':'contact'}"/>
           </group>
         </search>
       </field>

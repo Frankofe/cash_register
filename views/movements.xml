@@ -21,7 +21,7 @@
       <field name="name">cash_register.movements.view.form</field>
       <field name="model">cash_register.movements</field>
       <field name="arch" type="xml">
-        <form string="Movement Form">
+        <form string="Movement Form" duplicate="0">
           <sheet>
 
             <separator string="Movement Information" />

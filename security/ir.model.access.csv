@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_cash_register_movements,cash_register.movements,model_cash_register_movements,base.group_user,1,1,1,1
+access_cash_register_movements_user,cash_register.movements.user,model_cash_register_movements,group_user,1,0,1,0
+access_cash_register_movements_admin,cash_register.movements.admin,model_cash_register_movements,group_admin,1,1,1,1

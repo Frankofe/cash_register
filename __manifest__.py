@@ -23,6 +23,7 @@
 
     # always loaded
     'data': [
+        'security/cash_register_group.xml',
         'security/ir.model.access.csv',
         'views/movements.xml',
         'views/res_partner.xml',
